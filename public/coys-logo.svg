@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 120" fill="none">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&amp;display=swap');
+      .coys-text { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-weight: 900; font-size: 92px; letter-spacing: -0.03em; fill: #FFFFFF; }
+      .tagline-sub1 { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 26px; letter-spacing: 0.20em; fill: #FFFFFF; }
+      .tagline-sub2 { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 0.16em; fill: #FFFFFF; }
+    </style>
+  </defs>
+
+  <!-- Main COYS Text -->
+  <text x="4" y="86" class="coys-text">COYS</text>
+
+  <!-- Signature Sky Blue Bar under CO -->
+  <rect x="6" y="98" width="138" height="15" rx="7.5" fill="#38bdf8" />
+
+  <!-- Vertical Divider Line -->
+  <line x1="298" y1="14" x2="298" y2="106" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Taglines on Right -->
+  <text x="322" y="52" class="tagline-sub1">YOUR SPURS</text>
+  <text x="322" y="88" class="tagline-sub2">MATCHDAY COMPANION</text>
+</svg>

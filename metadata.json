@@ -1,0 +1,6 @@
+{
+  "name": "COYS - Your Spurs Matchday Companion",
+  "description": "The definitive matchday and away-day companion for Tottenham Hotspur supporters. Real-time fixtures, stadium guides, travel routes, Spurs pubs, and away grounds.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

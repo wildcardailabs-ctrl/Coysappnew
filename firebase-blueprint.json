@@ -1,0 +1,70 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile information for Spurs matchday supporters",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "email": { "type": "string", "format": "email", "description": "User email address" },
+        "displayName": { "type": "string", "description": "Supporter display name or nickname" },
+        "photoURL": { "type": "string", "description": "Avatar photo URL" },
+        "membershipNumber": { "type": "string", "description": "One Hotspur Membership or Season Ticket CRN" },
+        "tier": { "type": "string", "description": "Membership tier category" },
+        "loyaltyPoints": { "type": "number", "description": "Current One Hotspur loyalty points total" },
+        "homeStand": { "type": "string", "description": "Preferred stand in Tottenham Hotspur Stadium" },
+        "favoriteChant": { "type": "string", "description": "Favorite Spurs anthem or chant" },
+        "matchesAttended": { "type": "number", "description": "Total matches attended this season" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "displayName"]
+    },
+    "UserMatchLog": {
+      "title": "UserMatchLog",
+      "description": "Logged matchday attended by the supporter",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "matchId": { "type": "string" },
+        "opponent": { "type": "string" },
+        "date": { "type": "string" },
+        "venue": { "type": "string" },
+        "score": { "type": "string" },
+        "result": { "type": "string" },
+        "loyaltyPointsEarned": { "type": "number" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "userId", "opponent", "date"]
+    },
+    "UserPreferences": {
+      "title": "UserPreferences",
+      "description": "User dietary preferences and saved matchday items",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "dietary": { "type": "string" },
+        "favoriteBeers": { "type": "array" },
+        "savedPubIds": { "type": "array" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Supporter profile document restricted to the authenticated user"
+    },
+    "/users/{userId}/matches/{matchId}": {
+      "schema": "UserMatchLog",
+      "description": "Supporter match attendance history logs"
+    },
+    "/users/{userId}/preferences/{prefId}": {
+      "schema": "UserPreferences",
+      "description": "Supporter personalized settings and bookmarks"
+    }
+  }
+}
